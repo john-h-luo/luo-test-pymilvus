@@ -1,10 +1,11 @@
-FROM python:3.10
+FROM debian:bullseye-slim
 MAINTAINER John Luo
  
-# Creating Application Source Code Directory
-RUN mkdir -p /pymilvus/src
+# Updating apk
+RUN apt update
 
-# Setting Home Directory for containers
-WORKDIR /pymilvus/src
+# Installing python3
+RUN apt install python3
 
-RUN pip install pymilvus==2.0.2
+# Installing python3-pip
+RUN apt install python3-pip
