@@ -10,12 +10,3 @@ WORKDIR /pymilvus/src
 # Installing python dependencies
 COPY requirements.txt /pymilvus/src
 RUN pip install — no-cache-dir -r requirements.txt
-
-# Copying src code to Container
-COPY . /pymilvus/src/app
-
-# Application Environment variables
-ENV APP_ENV development
-
-# Running Python Application
-CMD [“python”, “app.py”]
